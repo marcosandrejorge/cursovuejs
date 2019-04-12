@@ -11,13 +11,21 @@
     
     <div id="app">
         <p>{{titulo}}</p>
+        <p>{{saudacao()}}</p>
+        <a v-bind:href="link">google</a>
     </div>
 
     <script>
         new Vue({
             el:'#app',
             data:{
-                titulo:'Usando VueJs!'
+                titulo:'Usando VueJs!',
+                link:'http://google.com.br'
+            },
+            methods:{
+                saudacao(){
+                    return this.titulo
+                }
             }
         })
     </script>
