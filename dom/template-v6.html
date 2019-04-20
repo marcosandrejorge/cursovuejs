@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Template</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!--V-ONCE não altera mais o valor da variavel, é meio que uma constante.-->
+        <p v-once>{{titulo}}</p>
+        <p>{{saudacao()}}</p>
+        <a v-bind:href="link">google</a>
+        <hr>
+        <p v-html="linkHtml"></p>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                titulo:'Usando VueJs!',
+                link:'http://google.com.br',
+                linkHtml:'<a href="http://google.com.br">google</a>'
+            },
+            methods:{
+                saudacao(){
+                    this.titulo = 'Bom dia!'
+                    return this.titulo
+                }
+            }
+        })
+    </script>
+</body>
+</html>
