@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Template</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{contador}}</p>
+        <button @click="somar(5,$event)">Somar 1</button>
+        <p @mousemove="atualizarXY"> 
+            Mouse: {{x}} e {{y}}
+            <span @mousemove="parar">
+                Parar aqui!!!!
+            </span>
+            <span @mousemove.stop="">
+                    Parar aqui!!!!
+            </span>
+        </p>
+
+        <a @click.prevent="" href="https://google.com.br">Google</a>
+
+        <input type="text" v-on:keyup="exibirAlerta">
+        <input type="text" v-on:keyup.enter="exibirAlerta" placeholder="Só com enter">
+        <input type="text" v-on:keyup.enter.alt="exibirAlerta" placeholder="Só com enter+alt">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x:0,
+                y:0,
+            },
+            methods:{
+                somar(value,event){
+                    this.contador += value;
+                },
+                atualizarXY:function(event){
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                parar(e){
+                    e.stopPropagation();
+                },
+                exibirAlerta(e){
+                    alert('Estou alertando você');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

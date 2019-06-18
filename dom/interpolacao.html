@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Template</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{contador * 2}}</p>
+        <p>{{contador}}</p>
+        <p>{{contador > 10 ? 'MAIOR QUE 10' : 'MENOR QUE 10'}}</p>
+        <button @click="somar">Somar 1</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0
+            },
+            methods:{
+                somar(){
+                    this.contador ++;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
