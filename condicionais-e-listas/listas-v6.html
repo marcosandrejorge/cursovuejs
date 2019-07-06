@@ -1,0 +1,26 @@
+<meta charset="UTF8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <!--Usar :key, para renderizar no v-for é melhor-->
+        <li v-for="(cor,index) in cores" :value="cor" :key="cor">{{cor}} - {{index}}</li>
+    </ul>
+
+    <button @click="cores.push('branca')">Adicionar</button>
+
+    
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            cores:['vermelho','verde','amarelo','azul'],
+            pessoas:[
+                {nome:'Ana',idade:26,peso:59},
+                {nome: 'Guilherme',idade:22,peso:89}
+            ]
+        }
+    })
+</script>
