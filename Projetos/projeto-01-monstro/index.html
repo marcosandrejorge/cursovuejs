@@ -7,16 +7,16 @@
         <div class="painel-jogdores">
             <h1>Jogador</h1>
             <div class="barra-vida">
-                <div class="preenchimento-vida" :class="{'red': jogador.vida <= 20,'green': jogador.vida >= 20}" :style="{'width':vidaJogador()}"></div>
+                <div class="preenchimento-vida" :class="{'red': jogador.vida <= 20,'green': jogador.vida >= 20}" :style="{'width':vidaJogador}"></div>
             </div>
-            <h5>{{vidaJogador()}}</h5>
+            <h5>{{vidaJogador}}</h5>
         </div>
         <div class="painel-jogdores">
             <h1>Monstro</h1>
             <div class="barra-vida">
-                <div class="preenchimento-vida" :class="{'red': monstro.vida <= 20,'green': monstro.vida >= 20}" :style="{'width':vidaMonstro()}"></div>
+                <div class="preenchimento-vida" :class="{'red': monstro.vida <= 20,'green': monstro.vida >= 20}" :style="{'width':vidaMonstro}"></div>
             </div>
-            <h5>{{vidaMonstro()}}</h5>
+            <h5>{{vidaMonstro}}</h5>
         </div>
     </div>
 

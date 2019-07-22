@@ -37,20 +37,21 @@ new Vue({
             }
 
             return false;
-        }
-    },
-    methods:{
+        },
         vidaJogador(){
             return `${this.jogador.vida}%`
         },
         vidaMonstro(){
             return `${this.monstro.vida}%`
         },
+    },
+    methods:{
         iniciarJogo(){
             this.jogoIniciado = true;
             this.monstro.vida = 100;
             this.jogador.vida = 100;
             this.gerarLog('Admin','green','Inicio de jogo');
+            this.logAcoes = [];
         },
         gerarNumeroRandom(maxDano){
             let min = Math.ceil(this.randomMinimo);
@@ -80,6 +81,7 @@ new Vue({
         curar(){
             let adicionarVida = this.gerarNumeroRandom(12);
             this.jogador.vida += adicionarVida;
+            this.jogador.vida = this.jogador.vida > 100 ? 100 : this.jogador.vida;
             this.gerarLog('Jogador','jogador','Jogador ganhou força de ' + adicionarVida);
             this.ataqueMonstro(this.monstro.ataque); 
         },
