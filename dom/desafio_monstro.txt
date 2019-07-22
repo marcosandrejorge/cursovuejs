@@ -1,0 +1,14 @@
+Anotações sobre desafio do monstro:
+
+-Jogador vs monstro
+-vida boa = verde
+-Vida ruim <= 20 = vermelho
+
+botões
+--Iniciar novo Jogo
+---Ataque - Os 2 atacam(Ataque ramdomico de 5-10), e o monstro tem um ataque um pouco maior.Fica logado os ataques
+---Ataque especial - O jogador tem mais chances de ganhar,
+---Curar - Jogador ganha vida, porém, o monstro ataca o jogador.
+---Desistir
+
+--Toda ação, fica um log

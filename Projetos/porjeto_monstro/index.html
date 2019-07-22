@@ -1,0 +1,52 @@
+<meta charset="utf-8"/>
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="style.css">
+
+<div id="projeto-monstro" class="conteudo">
+    <div class="painel-principal">
+        <div class="painel-jogdores">
+            <h1>Jogador</h1>
+            <div class="barra-vida">
+                <div class="preenchimento-vida" :class="{'red': jogador.vida <= 20,'green': jogador.vida >= 20}" :style="{'width':vidaJogador()}"></div>
+            </div>
+            <h5>{{vidaJogador()}}</h5>
+        </div>
+        <div class="painel-jogdores">
+            <h1>Monstro</h1>
+            <div class="barra-vida">
+                <div class="preenchimento-vida" :class="{'red': monstro.vida <= 20,'green': monstro.vida >= 20}" :style="{'width':vidaMonstro()}"></div>
+            </div>
+            <h5>{{vidaMonstro()}}</h5>
+        </div>
+    </div>
+
+    <div class="informativo-vencedor" v-show="verificarSeAlguemGanhou">
+        <h3 :class="objFimJogo.css">{{objFimJogo.mensagem}}</h3>
+    </div>
+
+    <div class="btn-acoes">
+        <div class="inline-flex">
+            <button class="btn blue" v-show="!jogoIniciado" @click="iniciarJogo()">
+                    Iniciar Jogo
+            </button>
+            <div id="acoes-jogo-iniciado" v-show="jogoIniciado">
+                <button class="btn red color-black" @click="ataque()">
+                    Ataque
+                </button>
+                <button class="btn yellow color-black" @click="ataqueEspecial()">
+                    Ataque especial
+                </button>
+                <button class="btn green" @click="curar()">
+                    Curar
+                </button>
+                <button class="btn grey color-black" @click="desistirJogo()">
+                    Desistir
+                </button>
+            </div>
+        </div>
+    </div>
+    <div v-show="logAcoes.length > 0" class="logText">
+        <div v-for="log in logAcoes" class="logLista" :class="log.css">{{log.mensagem}}</div>
+    </div>
+</div>
+<script src="app.js"></script>
