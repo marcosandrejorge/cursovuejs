@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+
+
+<div id="app">
+    {{titulo}}
+    <button @click="alterar">Alterar 1</button>
+</div>
+
+<script>
+
+    const vm1 = new Vue({
+        el:"#app",
+        data:{
+            titulo:'Teste 1',
+        },
+        methods:{
+            alterar(){
+                vm1.titulo += '!'
+            }
+        }
+    })
+
+    vm.novaInfo = 'Teste';//Está fora do scopo do vue.
+    console.log('Teste');
+
+</script>
