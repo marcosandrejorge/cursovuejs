@@ -1,0 +1,2 @@
+npm i //para instalar o modules novamente
+npm run serve //para iniciar o servidor.
