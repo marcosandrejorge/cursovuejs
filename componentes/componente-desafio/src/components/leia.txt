@@ -1,0 +1,1 @@
+Aqui nesta pasta irão os componentes separados, exemplo: Menu, uma modal de busca pessoa, uma listagem e etc.

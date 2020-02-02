@@ -11,12 +11,7 @@
 		</v-toolbar>
 
 		<v-content>
-			<v-carousel>
-				<v-carousel-item
-					v-for="(item,i) in fotos"
-					:key="i"
-					:src="item.src"></v-carousel-item>
-			</v-carousel>
+			<Carrosel :fotos="fotos"/>
 		</v-content>
 
 		<v-footer class="pa-3" app>
@@ -27,11 +22,13 @@
 </template>
 
 <script>
-import Menu from './Menu.vue'
+import Menu from '@/components/template/Menu'//@/ inicia da raiz do projeto, no caso na pasta SRC
+import Carrosel from '@/components/widgets/Carrosel'//@/ inicia da raiz do projeto, no caso na pasta SRC
 
 export default {
 	components: {
-		'app-menu': Menu
+		'app-menu': Menu,
+		Carrosel
 	},
 	data() {
 		return {
