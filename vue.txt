@@ -1,0 +1,43 @@
+v-model com prop value e $emit 'input'
+
+@click.stop e @cick.prevent
+
+==========================================================================
+
+2 jeitos de usar o v-model:
+
+JEITO 1:
+
+model:{
+   prop: "objPessoa",
+   event: "change-pessoa"
+},
+
+props: {
+   objPessoa: {
+      type: Object,
+      default: null,
+      required: true
+   }
+},
+
+data(){
+   return{
+      objPessoaCopia: {},
+   }
+}
+
+methods: {
+   retornar(){
+      this.$emit('change-pessoa', this.objPessoaCopia) // Quando emitir o evento 'change-pessoa' será repassado o objPessoaCopia para a variavel do v-model fora do componente.
+   }
+}
+
+watch: {
+   objPessoa: {
+      deep: true,
+      handler(){
+         this.objPessoaCopia = {...this.objPessoa};
+      }
+   }
+}
