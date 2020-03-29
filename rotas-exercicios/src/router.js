@@ -66,7 +66,8 @@ const router = new Router({
                     path: ':id/editar',
                     component: UsuarioEditar,
                     props: true,
-                    name: 'editarUsuario'
+                    name: 'editarUsuario',
+                    meta: { isLogado: true }
                 }
             ]
         },
